@@ -1,0 +1,2487 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="689" y="952" width="1497" height="363" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>FactTable</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="738" y="1170" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.order_track.order_id,
+	Statging.order_track.order_status,
+	Statging.order_track.order_date,
+	Statging.order_track.order_approved_date,
+	Statging.order_track.pickup_date,
+	Statging.order_track.delivered_date,
+	Statging.order_track.estimated_time_delivery 
+from Statging.order_track</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.order_track....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="order_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="V_String" />
+                <Field name="order_status" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="V_String" />
+                <Field name="order_date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="DateTime" />
+                <Field name="order_approved_date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="DateTime" />
+                <Field name="pickup_date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="DateTime" />
+                <Field name="delivered_date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="DateTime" />
+                <Field name="estimated_time_delivery" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.order_track.order_id,&#xA;	Statging.order_track.order_status,&#xA;	Statging.order_track.order_date,&#xA;	Statging.order_track.order_approved_date,&#xA;	Statging.order_track.pickup_date,&#xA;	Statging.order_track.delivered_date,&#xA;	Statging.order_track.estimated_time_delivery &#xA;from Statging.order_track" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="714" y="1001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.sales.order_id,
+	Statging.sales.user_id,
+	Statging.sales.product_id,
+	Statging.sales.feedback_id,
+	Statging.sales.seller_id,
+	Statging.sales.payment_id,
+	Statging.sales.quantity,
+	Statging.sales.price,
+	Statging.sales.shipping_cost 
+from Statging.sales</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.sales.order_...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="order_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="V_String" />
+                <Field name="user_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="V_String" />
+                <Field name="product_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="V_String" />
+                <Field name="feedback_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="V_String" />
+                <Field name="seller_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="V_String" />
+                <Field name="payment_id" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="Int32" />
+                <Field name="quantity" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="Int32" />
+                <Field name="price" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="Double" />
+                <Field name="shipping_cost" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.sales.order_id,&#xA;	Statging.sales.user_id,&#xA;	Statging.sales.product_id,&#xA;	Statging.sales.feedback_id,&#xA;	Statging.sales.seller_id,&#xA;	Statging.sales.payment_id,&#xA;	Statging.sales.quantity,&#xA;	Statging.sales.price,&#xA;	Statging.sales.shipping_cost &#xA;from Statging.sales" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="846" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="order_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="order_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_order_id" selected="True" input="Left_" />
+                    <SelectField field="Left_user_id" selected="True" input="Left_" />
+                    <SelectField field="Left_product_id" selected="True" input="Left_" />
+                    <SelectField field="Left_feedback_id" selected="True" input="Left_" />
+                    <SelectField field="Left_seller_id" selected="True" input="Left_" />
+                    <SelectField field="Left_payment_id" selected="True" input="Left_" />
+                    <SelectField field="Left_quantity" selected="True" input="Left_" />
+                    <SelectField field="Left_price" selected="True" input="Left_" />
+                    <SelectField field="Left_shipping_cost" selected="True" input="Left_" />
+                    <SelectField field="Right_order_id" selected="False" rename="Right_order_id" input="Right_" />
+                    <SelectField field="Right_order_status" selected="True" input="Right_" />
+                    <SelectField field="Right_order_date" selected="True" input="Right_" />
+                    <SelectField field="Right_order_approved_date" selected="True" input="Right_" />
+                    <SelectField field="Right_pickup_date" selected="True" input="Right_" />
+                    <SelectField field="Right_delivered_date" selected="True" input="Right_" />
+                    <SelectField field="Right_estimated_time_delivery" selected="True" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="69">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1206" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF IsEmpty([order_id]) Then &quot;0&quot; Else [order_id] EndIF" field="order_id" size="254" type="V_String" />
+                <FormulaField expression="IF IsEmpty([user_id]) Then &quot;0&quot; Else [user_id] EndIF" field="user_id" size="254" type="V_String" />
+                <FormulaField expression="IF IsEmpty([product_id]) Then &quot;0&quot; Else [product_id] EndIF" field="product_id" size="254" type="V_String" />
+                <FormulaField expression="IF IsEmpty([feedback_id]) Then &quot;0&quot; Else [feedback_id] EndIF" field="feedback_id" size="254" type="V_String" />
+                <FormulaField expression="IF IsEmpty([seller_id]) Then &quot;0&quot; Else [seller_id] EndIF" field="seller_id" size="254" type="V_String" />
+                <FormulaField expression="IF IsEmpty([order_status]) Then &quot;Unknown&quot; Else [order_status] EndIF" field="order_status" size="254" type="V_String" />
+                <FormulaField expression="if IsNull([order_date]) Then ToDate(&quot;2099-01-01 00:00:00&quot;) Else [order_date] EndIF " field="order_date" size="19" type="DateTime" />
+                <FormulaField expression="if IsNull([order_approved_date]) Then ToDate(&quot;2099-01-01 00:00:00&quot;) Else [order_approved_date] EndIF " field="order_approved_date" size="19" type="DateTime" />
+                <FormulaField expression="if IsNull([pickup_date]) Then ToDate(&quot;2099-01-01 00:00:00&quot;) Else [pickup_date] EndIF " field="pickup_date" size="19" type="DateTime" />
+                <FormulaField expression="if IsNull([delivered_date]) Then ToDate(&quot;2099-01-01 00:00:00&quot;) Else [delivered_date] EndIF " field="delivered_date" size="19" type="DateTime" />
+                <FormulaField expression="if IsNull([estimated_time_delivery]) Then ToDate(&quot;2099-01-01&quot;) Else [estimated_time_delivery] EndIF " field="estimated_time_delivery" size="19" type="DateTime" />
+                <FormulaField expression="DateTimeFormat([order_date],&quot;%Y-%m-%d&quot;)" field="new_order_date" size="10" type="Date" />
+                <FormulaField expression="DateTimeFormat([order_date],&quot;%H:%M:%S&quot;)" field="order_time" size="8" type="Time" />
+                <FormulaField expression="DateTimeFormat([order_approved_date],&quot;%Y-%m-%d&quot;)" field="new_order_approved_date" size="10" type="Date" />
+                <FormulaField expression="DateTimeFormat([order_approved_date],&quot;%H:%M:%S&quot;)" field="order_approved_time" size="8" type="Time" />
+                <FormulaField expression="DateTimeFormat([pickup_date],&quot;%Y-%m-%d&quot;)" field="new_picked_date" size="10" type="Date" />
+                <FormulaField expression="DateTimeFormat([pickup_date],&quot;%H:%M:%S&quot;)" field="picked_time" size="8" type="Time" />
+                <FormulaField expression="DateTimeFormat([delivered_date],&quot;%Y-%m-%d&quot;)" field="new_delivered_date" size="10" type="Date" />
+                <FormulaField expression="DateTimeFormat([delivered_date],&quot;%H:%M:%S&quot;)" field="delivered_time" size="8" type="Time" />
+                <FormulaField expression="DateTimeFormat([estimated_time_delivery],&quot;%Y-%m-%d&quot;)" field="estimated_date" size="10" type="Date" />
+                <FormulaField expression="IF [delivered_date] &gt; [estimated_time_delivery] &amp;&amp; [order_status] ==&quot;delivered&quot; &amp;&amp; [delivered_date] !=&quot;2099-01-01 00:00:00&quot; Then DateTimeDiff([delivered_date],[estimated_time_delivery],&quot;min&quot;) Else 0 EndIf" field="delay (min)" size="8" type="Int64" />
+                <FormulaField expression="IF [pickup_date]&lt;[delivered_date] &amp;&amp; [order_status] ==&quot;delivered&quot; &amp;&amp; [delivered_date] !=&quot;2099-01-01 00:00:00&quot; &amp;&amp; [pickup_date] !=&quot;2099-01-01 00:00:00&quot; Then DateTimeDiff([delivered_date],[pickup_date],&quot;min&quot;) Else 0 EndIf" field="shipping_time (min)" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>order_id = IF IsEmpty([order_id]) Then "0" Else [order_id] EndIF
+user_id = IF Is...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="966" y="1230" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings>
+            <Position x="1098" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"order_id","user_id","product_id","feedback_id","seller_id","payment_id","quantity","price","shipping_cost","order_status","order_date","order_approved_date","pickup_date","delivered_date","estimated_time_delivery"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1062" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1314" y="1062" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="order_id" selected="True" />
+                <SelectField field="user_id" selected="True" />
+                <SelectField field="product_id" selected="True" />
+                <SelectField field="feedback_id" selected="True" />
+                <SelectField field="seller_id" selected="True" />
+                <SelectField field="payment_id" selected="True" />
+                <SelectField field="order_status" selected="True" />
+                <SelectField field="order_date" selected="False" />
+                <SelectField field="order_approved_date" selected="False" />
+                <SelectField field="pickup_date" selected="False" />
+                <SelectField field="delivered_date" selected="False" />
+                <SelectField field="estimated_time_delivery" selected="False" />
+                <SelectField field="new_order_date" selected="True" rename="order_date" />
+                <SelectField field="order_time" selected="True" />
+                <SelectField field="new_order_approved_date" selected="True" rename="order_approved_date" />
+                <SelectField field="order_approved_time" selected="True" />
+                <SelectField field="new_picked_date" selected="True" rename="picked_date" />
+                <SelectField field="picked_time" selected="True" />
+                <SelectField field="new_delivered_date" selected="True" rename="delivered_date" />
+                <SelectField field="delivered_time" selected="True" />
+                <SelectField field="estimated_date" selected="True" />
+                <SelectField field="quantity" selected="True" />
+                <SelectField field="price" selected="True" />
+                <SelectField field="shipping_cost" selected="True" />
+                <SelectField field="delay (min)" selected="True" />
+                <SelectField field="shipping_time (min)" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1458" y="1074" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="user_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Customer_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_order_id" selected="True" input="Left_" />
+                    <SelectField field="Left_user_id" selected="True" input="Left_" />
+                    <SelectField field="Left_product_id" selected="True" input="Left_" />
+                    <SelectField field="Left_feedback_id" selected="True" input="Left_" />
+                    <SelectField field="Left_seller_id" selected="True" input="Left_" />
+                    <SelectField field="Left_payment_id" selected="True" input="Left_" />
+                    <SelectField field="Left_order_status" selected="True" input="Left_" />
+                    <SelectField field="Left_order_date" selected="True" input="Left_" />
+                    <SelectField field="Left_order_time" selected="True" input="Left_" />
+                    <SelectField field="Left_order_approved_date" selected="True" input="Left_" />
+                    <SelectField field="Left_order_approved_time" selected="True" input="Left_" />
+                    <SelectField field="Left_picked_date" selected="True" input="Left_" />
+                    <SelectField field="Left_picked_time" selected="True" input="Left_" />
+                    <SelectField field="Left_delivered_date" selected="True" input="Left_" />
+                    <SelectField field="Left_delivered_time" selected="True" input="Left_" />
+                    <SelectField field="Left_estimated_date" selected="True" input="Left_" />
+                    <SelectField field="Left_quantity" selected="True" input="Left_" />
+                    <SelectField field="Left_price" selected="True" input="Left_" />
+                    <SelectField field="Left_shipping_cost" selected="True" input="Left_" />
+                    <SelectField field="Left_delay (min)" selected="True" input="Left_" />
+                    <SelectField field="Left_shipping_time (min)" selected="True" input="Left_" />
+                    <SelectField field="Right_customer_city" selected="True" input="Right_" />
+                    <SelectField field="Right_customer_state" selected="True" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1578" y="1086" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="seller_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Seller_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Seller_key (PK)" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1674" y="1086" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[seller_state] +&quot;-&quot; +[seller_city] + &quot;-&gt;&quot; +[customer_state] +&quot;-&quot; +[customer_city]" field="route" size="1073741823" type="V_WString" />
+                <FormulaField expression="if Contains([route], &quot;Unknown&quot;) Then &quot;Unknown&quot; Else [route] EndIf" field="route" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>route = [seller_state] +"-" +[seller_city] + "-&gt;" +[customer_state] +"-" +[custo...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="80">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1794" y="1086" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="order_id" selected="True" />
+                <SelectField field="user_id" selected="True" rename="Customer_key (FK)	" />
+                <SelectField field="product_id" selected="True" rename="Product_key (FK)	" />
+                <SelectField field="feedback_id" selected="True" rename="Feedback_key (FK)" />
+                <SelectField field="seller_id" selected="True" rename="Seller_key (FK)" />
+                <SelectField field="payment_id" selected="True" rename="Payment_key (FK)" />
+                <SelectField field="order_status" selected="True" />
+                <SelectField field="order_date" selected="True" rename="Order_date (FK)" />
+                <SelectField field="order_time" selected="True" rename="Order_Time (FK)" />
+                <SelectField field="order_approved_date" selected="True" rename="Order_approved_date (FK)" />
+                <SelectField field="order_approved_time" selected="True" rename="Order_approved_Time (FK)" />
+                <SelectField field="picked_date" selected="True" rename="Picked_date (FK)" />
+                <SelectField field="picked_time" selected="True" rename="Picked_Time (FK)" />
+                <SelectField field="delivered_date" selected="True" rename="Delivered_date (FK)" />
+                <SelectField field="delivered_time" selected="True" rename="Delivered_Time (FK)" />
+                <SelectField field="estimated_date" selected="True" rename="Estimated_date (FK)" />
+                <SelectField field="quantity" selected="True" />
+                <SelectField field="price" selected="True" />
+                <SelectField field="shipping_cost" selected="True" />
+                <SelectField field="delay (min)" selected="True" />
+                <SelectField field="shipping_time (min)" selected="True" />
+                <SelectField field="route" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="82">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1902" y="1002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+              <TempFile>C:\Users\dell\AppData\Local\Temp\Engine_14940_1c9235cffb7d31419b9a5914b039b4fd_\Engine_14940_9d0a4adf1328ae4f91a7da2bcf675236~.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="83">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2058" y="1086" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||FactOrder</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=FactOrder</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1914" y="1098" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Customer_key (FK) " />
+                <Field field="Product_key (FK) " />
+                <Field field="Feedback_key (FK)" />
+                <Field field="Seller_key (FK)" />
+                <Field field="Payment_key (FK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Customer_key (FK) " />
+                <Field field="Product_key (FK) " />
+                <Field field="Feedback_key (FK)" />
+                <Field field="Seller_key (FK)" />
+                <Field field="Payment_key (FK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_order_id" selected="True" input="Left_" />
+                    <SelectField field="Left_Customer_key (FK) " selected="True" input="Left_" />
+                    <SelectField field="Left_Product_key (FK) " selected="True" input="Left_" />
+                    <SelectField field="Left_Feedback_key (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Seller_key (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Payment_key (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_order_status" selected="True" input="Left_" />
+                    <SelectField field="Left_Order_date (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Order_Time (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Order_approved_date (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Order_approved_Time (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Picked_date (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Picked_Time (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Delivered_date (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Delivered_Time (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Estimated_date (FK)" selected="True" input="Left_" />
+                    <SelectField field="Left_quantity" selected="True" input="Left_" />
+                    <SelectField field="Left_price" selected="True" input="Left_" />
+                    <SelectField field="Left_shipping_cost" selected="True" input="Left_" />
+                    <SelectField field="Left_delay (min)" selected="True" input="Left_" />
+                    <SelectField field="Left_shipping_time (min)" selected="True" input="Left_" />
+                    <SelectField field="Left_route" selected="True" input="Left_" />
+                    <SelectField field="Right_order_id" selected="True" rename="Right_order_id" input="Right_" />
+                    <SelectField field="Right_order_id2" selected="True" input="Right_" />
+                    <SelectField field="Right_Customer_key (FK) " selected="False" rename="Right_Customer_key (FK) " input="Right_" />
+                    <SelectField field="Right_Product_key (FK) " selected="False" rename="Right_Product_key (FK) " input="Right_" />
+                    <SelectField field="Right_Feedback_key (FK)" selected="False" rename="Right_Feedback_key (FK)" input="Right_" />
+                    <SelectField field="Right_Seller_key (FK)" selected="False" rename="Right_Seller_key (FK)" input="Right_" />
+                    <SelectField field="Right_Payment_key (FK)" selected="False" rename="Right_Payment_key (FK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="85">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1842" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">aka:.|||select FactOrder.order_id,
+	FactOrder.order_id,
+	FactOrder.[Customer_key (FK) ],
+	FactOrder.[Product_key (FK) ],
+	FactOrder.[Feedback_key (FK)],
+	FactOrder.[Seller_key (FK)],
+	FactOrder.[Payment_key (FK)] 
+from FactOrder</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select FactOrder.order_id,...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="order_id" size="254" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="V_String" />
+                <Field name="order_id2" size="254" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="V_String" />
+                <Field name="Customer_key (FK) " size="254" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="V_String" />
+                <Field name="Product_key (FK) " size="254" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="V_String" />
+                <Field name="Feedback_key (FK)" size="254" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="V_String" />
+                <Field name="Seller_key (FK)" size="254" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="V_String" />
+                <Field name="Payment_key (FK)" source="File: aka:.|||select FactOrder.order_id,&#xA;	FactOrder.order_id,&#xA;	FactOrder.[Customer_key (FK) ],&#xA;	FactOrder.[Product_key (FK) ],&#xA;	FactOrder.[Feedback_key (FK)],&#xA;	FactOrder.[Seller_key (FK)],&#xA;	FactOrder.[Payment_key (FK)] &#xA;from FactOrder" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1661" y="665" width="680" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>PaymentDim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1686" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.payment.payment_id,
+	Statging.payment.payment_sequential,
+	Statging.payment.payment_type,
+	Statging.payment.payment_installments,
+	Statging.payment.payment_value 
+from Statging.payment</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.payment.paym...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="payment_id" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.payment.payment_id,&#xA;	Statging.payment.payment_sequential,&#xA;	Statging.payment.payment_type,&#xA;	Statging.payment.payment_installments,&#xA;	Statging.payment.payment_value &#xA;from Statging.payment" type="Int32" />
+                <Field name="payment_sequential" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.payment.payment_id,&#xA;	Statging.payment.payment_sequential,&#xA;	Statging.payment.payment_type,&#xA;	Statging.payment.payment_installments,&#xA;	Statging.payment.payment_value &#xA;from Statging.payment" type="Int32" />
+                <Field name="payment_type" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.payment.payment_id,&#xA;	Statging.payment.payment_sequential,&#xA;	Statging.payment.payment_type,&#xA;	Statging.payment.payment_installments,&#xA;	Statging.payment.payment_value &#xA;from Statging.payment" type="V_String" />
+                <Field name="payment_installments" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.payment.payment_id,&#xA;	Statging.payment.payment_sequential,&#xA;	Statging.payment.payment_type,&#xA;	Statging.payment.payment_installments,&#xA;	Statging.payment.payment_value &#xA;from Statging.payment" type="Int32" />
+                <Field name="payment_value" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.payment.payment_id,&#xA;	Statging.payment.payment_sequential,&#xA;	Statging.payment.payment_type,&#xA;	Statging.payment.payment_installments,&#xA;	Statging.payment.payment_value &#xA;from Statging.payment" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings>
+            <Position x="1782" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"payment_sequential","payment_type","payment_installments","payment_value"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">title</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1890" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ReplaceChar([payment_type], &quot;_&quot;, &quot; &quot;)" field="payment_type" size="254" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[payment_type = ReplaceChar([payment_type], "_", " ")
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1986" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="payment_id" selected="True" rename="Payment_key (PK)" />
+                <SelectField field="payment_sequential" selected="True" />
+                <SelectField field="payment_type" selected="True" />
+                <SelectField field="payment_installments" selected="True" />
+                <SelectField field="payment_value" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="62">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2214" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimPayment</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimPayment</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="2106" y="726" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Payment_key (PK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Payment_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Payment_key (PK)" selected="True" rename="Right_Payment_key (PK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="64">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="2034" y="786" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">aka:.|||select DimPayment.[Payment_key (PK)] 
+from DimPayment</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select DimPayment.[Payment_k...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Payment_key (PK)" source="File: aka:.|||select DimPayment.[Payment_key (PK)] &#xA;from DimPayment" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1013" y="665" width="573" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>CustomerDim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1038" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.user_data.user_id,
+	Statging.user_data.customer_zip_code,
+	Statging.user_data.customer_city,
+	Statging.user_data.customer_state 
+from Statging.user_data</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.user_data.us...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="user_id" size="254" source="File: aka:.|||select Statging.user_data.user_id,&#xA;	Statging.user_data.customer_zip_code,&#xA;	Statging.user_data.customer_city,&#xA;	Statging.user_data.customer_state &#xA;from Statging.user_data" type="V_String" />
+                <Field name="customer_zip_code" source="File: aka:.|||select Statging.user_data.user_id,&#xA;	Statging.user_data.customer_zip_code,&#xA;	Statging.user_data.customer_city,&#xA;	Statging.user_data.customer_state &#xA;from Statging.user_data" type="Int32" />
+                <Field name="customer_city" size="254" source="File: aka:.|||select Statging.user_data.user_id,&#xA;	Statging.user_data.customer_zip_code,&#xA;	Statging.user_data.customer_city,&#xA;	Statging.user_data.customer_state &#xA;from Statging.user_data" type="V_String" />
+                <Field name="customer_state" size="254" source="File: aka:.|||select Statging.user_data.user_id,&#xA;	Statging.user_data.customer_zip_code,&#xA;	Statging.user_data.customer_city,&#xA;	Statging.user_data.customer_state &#xA;from Statging.user_data" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="52">
+          <GuiSettings>
+            <Position x="1134" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"customer_zip_code","customer_city","customer_state"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">True</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">title</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1230" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="user_id" selected="True" rename="Customer_key (PK)" />
+                <SelectField field="customer_zip_code" selected="True" />
+                <SelectField field="customer_city" selected="True" />
+                <SelectField field="customer_state" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1458" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimCustomer</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimCustomer</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1338" y="726" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Customer_key (PK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Customer_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Customer_key (PK)" selected="True" input="Left_" />
+                    <SelectField field="Left_customer_zip_code" selected="True" input="Left_" />
+                    <SelectField field="Left_customer_city" selected="True" input="Left_" />
+                    <SelectField field="Left_customer_state" selected="True" input="Left_" />
+                    <SelectField field="Right_Customer_key (PK)" selected="False" rename="Right_Customer_key (PK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1278" y="786" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select DimCustomer.[Customer_key (PK)],
+	DimCustomer.customer_city,
+	DimCustomer.customer_state 
+from DimCustomer</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select DimCustomer.[Customer...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Customer_key (PK)" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimCustomer.[Customer_key (PK)],&#xA;	DimCustomer.customer_city,&#xA;	DimCustomer.customer_state &#xA;from DimCustomer" type="V_String" />
+                <Field name="customer_city" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimCustomer.[Customer_key (PK)],&#xA;	DimCustomer.customer_city,&#xA;	DimCustomer.customer_state &#xA;from DimCustomer" type="V_String" />
+                <Field name="customer_state" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimCustomer.[Customer_key (PK)],&#xA;	DimCustomer.customer_city,&#xA;	DimCustomer.customer_state &#xA;from DimCustomer" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="389" y="665" width="573" height="255" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>SellerDim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="414" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.seller.seller_id,
+	Statging.seller.seller_zip_code,
+	Statging.seller.seller_city,
+	Statging.seller.seller_state 
+from Statging.seller</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.seller.selle...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="seller_id" size="254" source="File: aka:.|||select Statging.seller.seller_id,&#xA;	Statging.seller.seller_zip_code,&#xA;	Statging.seller.seller_city,&#xA;	Statging.seller.seller_state &#xA;from Statging.seller" type="V_String" />
+                <Field name="seller_zip_code" source="File: aka:.|||select Statging.seller.seller_id,&#xA;	Statging.seller.seller_zip_code,&#xA;	Statging.seller.seller_city,&#xA;	Statging.seller.seller_state &#xA;from Statging.seller" type="Int32" />
+                <Field name="seller_city" size="254" source="File: aka:.|||select Statging.seller.seller_id,&#xA;	Statging.seller.seller_zip_code,&#xA;	Statging.seller.seller_city,&#xA;	Statging.seller.seller_state &#xA;from Statging.seller" type="V_String" />
+                <Field name="seller_state" size="254" source="File: aka:.|||select Statging.seller.seller_id,&#xA;	Statging.seller.seller_zip_code,&#xA;	Statging.seller.seller_city,&#xA;	Statging.seller.seller_state &#xA;from Statging.seller" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings>
+            <Position x="510" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"seller_zip_code","seller_city","seller_state"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">True</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">title</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="606" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="seller_id" selected="True" rename="Seller_key (PK)" />
+                <SelectField field="seller_zip_code" selected="True" />
+                <SelectField field="seller_city" selected="True" />
+                <SelectField field="seller_state" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="834" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimSeller</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimSeller</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="48">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="702" y="726" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Seller_key (PK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Seller_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Seller_key (PK)" selected="True" input="Left_" />
+                    <SelectField field="Left_seller_zip_code" selected="True" input="Left_" />
+                    <SelectField field="Left_seller_city" selected="True" input="Left_" />
+                    <SelectField field="Left_seller_state" selected="True" input="Left_" />
+                    <SelectField field="Right_Seller_key (PK)" selected="False" rename="Right_Seller_key (PK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="630" y="774" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select DimSeller.[Seller_key (PK)],
+	DimSeller.seller_city,
+	DimSeller.seller_state 
+from DimSeller</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select DimSeller.[Seller_key...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Seller_key (PK)" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimSeller.[Seller_key (PK)],&#xA;	DimSeller.seller_city,&#xA;	DimSeller.seller_state &#xA;from DimSeller" type="V_String" />
+                <Field name="seller_city" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimSeller.[Seller_key (PK)],&#xA;	DimSeller.seller_city,&#xA;	DimSeller.seller_state &#xA;from DimSeller" type="V_String" />
+                <Field name="seller_state" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimSeller.[Seller_key (PK)],&#xA;	DimSeller.seller_city,&#xA;	DimSeller.seller_state &#xA;from DimSeller" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1421" y="352" width="659" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>DimProduct</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1446" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.product.product_id,
+	Statging.product.product_category,
+	Statging.product.product_name_lenght,
+	Statging.product.product_description_lenght,
+	Statging.product.product_photos_qty,
+	Statging.product.product_weight_g,
+	Statging.product.product_height_cm,
+	Statging.product.product_length_cm,
+	Statging.product.product_width_cm 
+from Statging.product</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.product.prod...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="product_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="V_String" />
+                <Field name="product_category" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="V_String" />
+                <Field name="product_name_lenght" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+                <Field name="product_description_lenght" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+                <Field name="product_photos_qty" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+                <Field name="product_weight_g" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+                <Field name="product_height_cm" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+                <Field name="product_length_cm" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+                <Field name="product_width_cm" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.product.product_id,&#xA;	Statging.product.product_category,&#xA;	Statging.product.product_name_lenght,&#xA;	Statging.product.product_description_lenght,&#xA;	Statging.product.product_photos_qty,&#xA;	Statging.product.product_weight_g,&#xA;	Statging.product.product_height_cm,&#xA;	Statging.product.product_length_cm,&#xA;	Statging.product.product_width_cm &#xA;from Statging.product" type="Int32" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings>
+            <Position x="1554" y="401" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"product_category","product_name_lenght","product_description_lenght","product_photos_qty","product_weight_g","product_height_cm","product_length_cm","product_width_cm"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">True</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">title</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1650" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="product_id" selected="True" rename="Product_key (PK)" />
+                <SelectField field="product_category" selected="True" />
+                <SelectField field="product_name_lenght" selected="True" />
+                <SelectField field="product_description_lenght" selected="True" />
+                <SelectField field="product_photos_qty" selected="True" />
+                <SelectField field="product_weight_g" selected="True" />
+                <SelectField field="product_height_cm" selected="True" />
+                <SelectField field="product_length_cm" selected="True" />
+                <SelectField field="product_width_cm" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1950" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimProduct</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimProduct</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1734" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ReplaceChar([product_category], &quot;_&quot;, &quot; &quot;)" field="product_category" size="254" type="V_String" />
+                <FormulaField expression="IF [product_category]=='' THEN &quot;Unknown&quot; ELSE [product_category] ENDIF" field="product_category" size="254" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>product_category = ReplaceChar([product_category], "_", " ")
+product_category = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1830" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Product_key (PK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Product_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Product_key (PK)" selected="True" rename="Right_Product_key (PK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1650" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">aka:.|||select DimProduct.[Product_key (PK)] 
+from DimProduct</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select DimProduct.[Product_k...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Product_key (PK)" size="254" source="File: aka:.|||select DimProduct.[Product_key (PK)] &#xA;from DimProduct" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="773" y="353" width="587" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>FeedbackDim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="798" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select Statging.Feedback.feedback_id,
+	Statging.Feedback.feeback_score,
+	Statging.Feedback.feedback_form_sent_date,
+	Statging.Feedback.feedback_answer_date 
+from Statging.Feedback</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select Statging.Feedback.fee...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="feedback_id" size="254" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.Feedback.feedback_id,&#xA;	Statging.Feedback.feeback_score,&#xA;	Statging.Feedback.feedback_form_sent_date,&#xA;	Statging.Feedback.feedback_answer_date &#xA;from Statging.Feedback" type="V_String" />
+                <Field name="feeback_score" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.Feedback.feedback_id,&#xA;	Statging.Feedback.feeback_score,&#xA;	Statging.Feedback.feedback_form_sent_date,&#xA;	Statging.Feedback.feedback_answer_date &#xA;from Statging.Feedback" type="Int32" />
+                <Field name="feedback_form_sent_date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.Feedback.feedback_id,&#xA;	Statging.Feedback.feeback_score,&#xA;	Statging.Feedback.feedback_form_sent_date,&#xA;	Statging.Feedback.feedback_answer_date &#xA;from Statging.Feedback" type="Date" />
+                <Field name="feedback_answer_date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select Statging.Feedback.feedback_id,&#xA;	Statging.Feedback.feeback_score,&#xA;	Statging.Feedback.feedback_form_sent_date,&#xA;	Statging.Feedback.feedback_answer_date &#xA;from Statging.Feedback" type="Date" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings>
+            <Position x="906" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"feeback_score","feedback_form_sent_date","feedback_answer_date"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1002" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="feedback_id" selected="True" rename="Feedback_key (PK)" />
+                <SelectField field="feeback_score" selected="True" />
+                <SelectField field="feedback_form_sent_date" selected="True" />
+                <SelectField field="feedback_answer_date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1230" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimFeedback</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimFeedback</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1098" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Feedback_key (PK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Feedback_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Feedback_key (PK)" selected="True" input="Left_" />
+                    <SelectField field="Left_feeback_score" selected="True" input="Left_" />
+                    <SelectField field="Left_feedback_form_sent_date" selected="True" input="Left_" />
+                    <SelectField field="Left_feedback_answer_date" selected="True" input="Left_" />
+                    <SelectField field="Right_Feedback_key (PK)" selected="False" rename="Right_Feedback_key (PK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="1014" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File FileFormat="23" RecordLimit="">aka:.|||select DimFeedback.[Feedback_key (PK)] 
+from DimFeedback</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select DimFeedback.[Feedback...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Feedback_key (PK)" size="254" source="File: aka:.|||select DimFeedback.[Feedback_key (PK)] &#xA;from DimFeedback" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="113" y="353" width="604" height="279" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>DateDim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+            <Position x="138" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name />
+              <CreateField_Name>Date</CreateField_Name>
+              <CreateField_Type>Date</CreateField_Type>
+              <CreateField_Size>10</CreateField_Size>
+              <Expression_Init>DateTimeAdd(DateTimeToday(),-DateTimeDiff(DateTimeToday(),toDate('2016-01-01'),"days"),"days")</Expression_Init>
+              <Expression_Cond><![CDATA[[Date]<= DateTimeAdd(DateTimeToday(),2,"days") ]]></Expression_Cond>
+              <Expression_Loop>DateTimeAdd([Date],1,'days')</Expression_Loop>
+              <RecordCount value="2906" />
+              <RecordCount value="2907" />
+              <RecordCount value="2907" />
+              <RecordCount value="2907" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="234" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeYear([Date])" field="year" size="4" type="Int32" />
+                <FormulaField expression="DateTimeMonth([Date])" field="month" size="4" type="Int32" />
+                <FormulaField expression="DateTimeDay([Date])" field="day" size="4" type="Int32" />
+                <FormulaField expression="ToNumber(DateTimeFormat([Date], &quot;%w&quot;))+1" field="Day of Week" size="4" type="Int32" />
+                <FormulaField expression="toNumber(DateTimeFormat([Date], &quot;%j&quot;))&#xA;" field="Day of Year" size="4" type="Int32" />
+                <FormulaField expression="  If DateTimeFormat([Date], &quot;%m%d&quot;) &gt;= &quot;0321&quot; AND DateTimeFormat([Date], &quot;%m%d&quot;) &lt; &quot;0621&quot; THEN &quot;Spring&quot;&#xA;  ELSEIF DateTimeFormat([Date], &quot;%m%d&quot;) &gt;= &quot;0621&quot; AND DateTimeFormat([Date], &quot;%m%d&quot;) &lt; &quot;0923&quot; THEN &quot;Summer&quot;&#xA;  ELSEIF DateTimeFormat([Date], &quot;%m%d&quot;) &gt;= &quot;0923&quot; AND DateTimeFormat([Date], &quot;%m%d&quot;) &lt; &quot;1222&quot; THEN &quot;Fall&quot;&#xA;  ELSE &quot;Winter&quot;&#xA;  ENDIF" field="Season" size="1073741823" type="V_WString" />
+                <FormulaField expression="ToNumber(DateTimeFormat([Date], &quot;%U&quot;))+1" field="Week of Year" size="4" type="Int32" />
+                <FormulaField expression="ToNumber(DateTimeFormat([Date], &quot;%Y%m%d&quot;))" field="Date_key" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>year = DateTimeYear([Date])
+month = DateTimeMonth([Date])
+day = DateTimeDay([Dat...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="366" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date_key" selected="True" rename="Date_key (PK)" type="Int64" size="8" />
+                <SelectField field="Date" selected="True" />
+                <SelectField field="year" selected="True" />
+                <SelectField field="month" selected="True" />
+                <SelectField field="day" selected="True" />
+                <SelectField field="Day of Week" selected="True" />
+                <SelectField field="Day of Year" selected="True" />
+                <SelectField field="Season" selected="True" />
+                <SelectField field="Week of Year" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="594" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimDate</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimDate</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="450" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Date_key (PK)" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Date_key (PK)" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Date_key (PK)" selected="True" input="Left_" />
+                    <SelectField field="Left_Date" selected="True" input="Left_" />
+                    <SelectField field="Left_year" selected="True" input="Left_" />
+                    <SelectField field="Left_month" selected="True" input="Left_" />
+                    <SelectField field="Left_day" selected="True" input="Left_" />
+                    <SelectField field="Left_Day of Week" selected="True" input="Left_" />
+                    <SelectField field="Left_Day of Year" selected="True" input="Left_" />
+                    <SelectField field="Left_Season" selected="True" input="Left_" />
+                    <SelectField field="Left_Week of Year" selected="True" input="Left_" />
+                    <SelectField field="Right_Date_key (PK)" selected="False" rename="Right_Date_key (PK)" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="390" y="486" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <CachedCosmeticName />
+              <File FileFormat="23" RecordLimit="">aka:.|||select DimDate.[Date_key (PK)],
+	DimDate.Date 
+from DimDate</File>
+              <FormatSpecificOptions>
+                <SingleRowFetch>False</SingleRowFetch>
+                <ReadCentroids>False</ReadCentroids>
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=select DimDate.[Date_key (PK...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date_key (PK)" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimDate.[Date_key (PK)],&#xA;	DimDate.Date &#xA;from DimDate" type="Int64" />
+                <Field name="Date" source="File: odbc:DRIVER={ODBC Driver 17 for SQL Server};DATABASE=E-commerce;SERVER=localhost;Trusted_Connection=yes|||select DimDate.[Date_key (PK)],&#xA;	DimDate.Date &#xA;from DimDate" type="Date" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="905" y="77" width="437" height="240" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>TimeDim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+            <Position x="930" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name />
+              <CreateField_Name>Time</CreateField_Name>
+              <CreateField_Type>DateTime</CreateField_Type>
+              <CreateField_Size>19</CreateField_Size>
+              <Expression_Init><![CDATA[DateTimeAdd('2016-01-02 00:00:00', -DateTimeDiff('2016-01-02 00:00:00', ToDateTime('2016-01-01 00:00:00'), 'seconds'), 'seconds')
+]]></Expression_Init>
+              <Expression_Cond><![CDATA[[Time] < '2016-01-02 00:00:00'
+]]></Expression_Cond>
+              <Expression_Loop><![CDATA[DateTimeAdd([Time], 1, 'seconds')
+]]></Expression_Loop>
+              <RecordCount value="86400" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1014" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeFormat([Time], &quot;%H:%M:%S&quot;)" field="TimeOnly" size="8" type="Time" />
+                <FormulaField expression="DateTimeFormat([Time], &quot;%H%M%S&quot;)" field="Time_key" size="1073741823" type="V_WString" />
+                <FormulaField expression="toNumber(DateTimeFormat([Time], &quot;%H&quot;))" field="Hour" size="4" type="Int32" />
+                <FormulaField expression="ToNumber(DateTimeFormat([Time], &quot;%M&quot;))" field="Min" size="4" type="Int32" />
+                <FormulaField expression="toNumber(DateTimeFormat([Time], &quot;%S&quot;))" field="Sec" size="4" type="Int32" />
+                <FormulaField expression="DateTimeFormat([Time], &quot;%p&quot;)" field="Meridiem " size="2147483647" type="V_String" />
+                <FormulaField expression="IF [Hour] &lt;12 THEN &quot;Morning&quot; ELSEIF [Hour]&lt;18 THEN &quot;Afternoon&quot; ELSE &quot;Evening&quot; ENDIF" field="Time of Day" size="2147483647" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>TimeOnly = DateTimeFormat([Time], "%H:%M:%S")
+Time_key = DateTimeFormat([Time], ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1122" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="TimeOnly" selected="True" />
+                <SelectField field="Time_key" selected="True" rename="Time_key (PK)" />
+                <SelectField field="Hour" selected="True" />
+                <SelectField field="Min" selected="True" />
+                <SelectField field="Sec" selected="True" />
+                <SelectField field="Meridiem " selected="True" />
+                <SelectField field="Time of Day" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1218" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">aka:.|||DimTime</File>
+              <Passwords />
+              <CachedCosmeticName />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Create</OutputOption>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>aka:.
+Query=DimTime</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="68" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Left" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="68" Connection="Left" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="68" Connection="Right" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="68" Connection="Join" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="73" Connection="Output26" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="73" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="77" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="77" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Join" />
+      <Destination ToolID="78" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="78" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Join" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="84" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="85" Connection="Output" />
+      <Destination ToolID="84" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="Left" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="59" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output26" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="63" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="63" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Left" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="52" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output26" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="55" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="55" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Left" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="44" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output26" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="48" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="48" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Left" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output26" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="40" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="40" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Left" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="25" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output26" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="30" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="30" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Left" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Left" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>ETLFromStagingToDataWareHouse</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="6862b55e-85b4-4d88-a819-bdb60eb6b78d" />
+      <Telemetry>
+        <PreviousWorkflowId value="b0e18e6f-cab5-4807-b015-267199dfea30" />
+        <OriginWorkflowId value="b0e18e6f-cab5-4807-b015-267199dfea30" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
