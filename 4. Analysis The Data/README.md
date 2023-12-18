@@ -136,6 +136,7 @@ _(To be implemented)_
 
 ```sql
 -- Purchase frequency analysis by state
+------------------------------------------------------------
 SELECT customer_state, COUNT(order_id) Frequency_of_purchase
 FROM FactOrder
 JOIN DimCustomer ON FactOrder.[Customer_key (FK)] = DimCustomer.[Customer_key (PK)]
