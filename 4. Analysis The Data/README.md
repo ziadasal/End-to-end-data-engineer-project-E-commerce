@@ -55,6 +55,10 @@ ORDER BY Sales DESC;
 |9 |664946930 |4709
 |0 |0 |830
 
+The peak season is **Spring**.
+
+The peak month is **May**.
+
 ## 2) Order Timing Analysis
 
 ```sql
@@ -98,6 +102,9 @@ ORDER BY Number_of_orders DESC;
 |4 | AM | Morning | 227
 |5 | AM | Morning | 201
 
+We can SEE that the peak hours are 16 PM, 14 PM, 11 AM, 13 PM, 15 PM.
+
+And the peak time of day is afternoon.
 
 ## 3) Preferred Payment Method
 
@@ -116,17 +123,29 @@ ORDER BY number_of_use DESC;
 | Voucher | 5769 |
 | Debit Card | 1529 |
 
+Note : There are 830 orders with no payment value. (Unknown)
+
+The most preferred payment method is **credit card**.
+
 ## 4) Average Installments
 
 ```sql
 -- Average number of installments analysis
-SELECT CEILING(AVG(payment_installments*1.0)) Avg_of_installments
-FROM DimPayment;
+SELECT CEILING(AVG(number_of_installments*1.0)) Avg_of_installments
+FROM (
+    SELECT order_id, max(payment_installments) number_of_installments
+    FROM DimPayment
+    JOIN FactOrder
+    ON DimPayment.[Payment_key (PK)] = FactOrder.[Payment_key (FK)]
+    GROUP BY order_id
+) AS NewTab
 ```
 
 | Avg_of_installments |
 | --- |
 |3|
+
+We can SEE that the average number of installments is 3. (2.93 -> 3)
 
 ## 5) Average Spending Time
 
