@@ -6,124 +6,107 @@
 
 ```sql
 -- Peak season analysis for seasons
-WITH Seasons_Sales AS (
-    SELECT Season, SUM(price*quantity) Sales, COUNT(FactOrder.order_id) Number_of_orders
-    FROM FactOrder
-    JOIN DimDate ON [Order_date (FK)] = DimDate.Date
-    GROUP BY Season
-)
-SELECT *
-FROM Seasons_Sales
-ORDER BY Sales DESC;
+SELECT [Warehouse].Dates.Season , COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
+FROM [Warehouse].Dates 
+JOIN [Warehouse].OrderItems
+ON [Warehouse].Dates.DateKey = [Warehouse].OrderItems.OrderDateKey
+GROUP BY [Warehouse].Dates.Season
+ORDER BY Number_of_orders DESC;
 ```
-| Season | Sales | Number_of_orders |
-| --- | --- | --- |
-| Spring | 4444291440 | 32394 |
-| Summer | 3854436330 | 29730 |
-| Winter | 3351528780 | 26269 |
-| Fall | 2589286770 | 19703 |
-| Unknown | 0 | 830 |
+| Season | Number_of_orders |
+| --- | --- |
+| Spring | 29719 |
+| Summer | 27089 |
+| Winter | 24423 |
+| Fall | 18210 |
 
 ### Months
 
 ```sql
 -- Peak season analysis for months
-WITH Months_Sales AS (
-    SELECT month, SUM(price*quantity) Sales, COUNT(FactOrder.order_id) Number_of_orders
-    FROM FactOrder
-    JOIN DimDate ON [Order_date (FK)] = DimDate.Date
-    GROUP BY month
-)
-SELECT *
-FROM Months_Sales
-ORDER BY Sales DESC;
+SELECT [Warehouse].Dates.[Month Name] , COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
+FROM [Warehouse].Dates 
+JOIN [Warehouse].OrderItems
+ON [Warehouse].Dates.DateKey = [Warehouse].OrderItems.OrderDateKey
+GROUP BY [Warehouse].Dates.[Month Name]
+ORDER BY Number_of_orders DESC;
 ```
-
-| month | Sales | Number_of_orders |
-| --- | --- | --- |
-|5 |1579696180 |11516
-|8 |1488480540 |11738
-|7 |1461364050 |11253
-|3 |1424794090 |10706
-|4 |1423211610 |10169
-|6 |1364614860 |10248
-|2 |1145619720 |9131
-|1 |1117440820 |8798
-|11 |1050601850 |8245
-|12 |772257410 |6133
-|10 |746515260 |5450
-|9 |664946930 |4709
-|0 |0 |830
+| Month Name | Number_of_orders |
+| --- | --- |
+| August | 10843 |
+| May | 10573 |
+| July | 10318 |
+| March | 9893 |
+| June | 9412 |
+| April | 9343 |
+| February | 8508 |
+| January | 8069 |
+| November | 7544 |
+| December | 5674 |
+| October | 4959 |
+| September | 4305 |
 
 The peak season is **Spring**.
 
-The peak month is **May**.
+The peak month is **August**.
 
 ## 2) Order Timing Analysis
 
 ```sql
 -- Order timing analysis
-WITH times_Sales AS (
-    SELECT Hour, [Meridiem], [Time of Day], COUNT(FactOrder.order_id) Number_of_orders
-    FROM FactOrder
-    JOIN DimTime ON [Order_Time (FK)] = DimTime.TimeOnly
-    GROUP BY Hour, [Meridiem], [Time of Day]
-)
-SELECT *
-FROM times_Sales
+SELECT [Warehouse].Times.Hour ,[Warehouse].Times.[AM/PM] , COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
+FROM [Warehouse].Times 
+JOIN [Warehouse].OrderItems
+ON [Warehouse].Times.TimeKey = [Warehouse].OrderItems.OrderTimeKey
+GROUP BY [Warehouse].Times.Hour ,[Warehouse].Times.[AM/PM]
 ORDER BY Number_of_orders DESC;
 ```
 
+| Hour | AM/PM | Number_of_orders |
+| --- | --- | --- |
+| 16 | P.M. | 6675 |
+| 11 | A.M. | 6578 |
+| 14 | P.M. | 6569 |
+| 13 | P.M. | 6518 |
+| 15 | P.M. | 6454 |
+| 21 | P.M. | 6217 |
+| 20 | P.M. | 6193 |
+| 10 | A.M. | 6177 |
+| 17 | P.M. | 6150 |
+| 12 | P.M. | 5995 |
+| 19 | P.M. | 5982 |
+| 22 | P.M. | 5816 |
+| 18 | P.M. | 5769 |
+| 9 | A.M. | 4785 |
+| 23 | P.M. | 4123 |
+| 8 | A.M. | 2967 |
+| 0 | A.M. | 2394 |
+| 7 | A.M. | 1231 |
+| 1 | A.M. | 1170 |
+| 2 | A.M. | 510 |
+| 6 | A.M. | 502 |
+| 3 | A.M. | 272 |
+| 4 | A.M. | 206 |
+| 5 | A.M. | 188 |
 
-| Hour | Meridiem | Time of Day | Number_of_orders |
-| --- | --- | --- | --- |
-| 16 | PM | Afternoon | 7247
-|14 | PM | Afternoon | 7155
-|11 | AM | Morning | 7127
-|13 | PM | Afternoon | 7069
-|15 | PM | Afternoon | 6965
-|21 | PM | Evening | 6765
-|20 | PM | Evening | 6748
-|10 | AM | Morning | 6670
-|17 | PM | Afternoon | 6661
-|12 | PM | Afternoon | 6571
-|19 | PM | Evening | 6474
-|22 | PM | Evening | 6418
-|18 | PM | Evening | 6316
-|9 | AM | Morning | 5147
-|23 | PM | Evening | 4524
-|0 | AM | Morning | 3480
-|8 | AM | Morning | 3188
-|7 | AM | Morning | 1312
-|1 | AM | Morning | 1266
-|2 | AM | Morning | 565
-|6 | AM | Morning | 537
-|3 | AM | Morning | 293
-|4 | AM | Morning | 227
-|5 | AM | Morning | 201
-
-We can SEE that the peak hours are 16 PM, 14 PM, 11 AM, 13 PM, 15 PM.
-
-And the peak time of day is afternoon.
+We can SEE that the peak hours are 16 PM, 11 AM, 14 PM, 13 PM, 15 PM.
 
 ## 3) Preferred Payment Method
 
 ```sql
 -- Preferred payment method analysis
-SELECT payment_type, COUNT(payment_type) number_of_use
-FROM DimPayment
-WHERE payment_value != 0
-GROUP BY payment_type
-ORDER BY number_of_use DESC;
+SELECT [Warehouse].Payments.PaymentType , COUNT([Warehouse].Payments.PaymentType) Number_of_orders
+FROM [Warehouse].Payments
+GROUP BY [Warehouse].Payments.PaymentType
+ORDER BY Number_of_orders DESC
 ```
-| payment_type | number_of_use |
+| PaymentType | Number_of_orders |
 | --- | --- |
 | Credit Card | 76795 |
 | Blipay | 19784 |
-| Voucher | 5769 |
+| Voucher | 5775 |
 | Debit Card | 1529 |
-
-Note : There are 830 orders with no payment value. (Unknown)
+| Not Defined | 3 |
 
 The most preferred payment method is **credit card**.
 
@@ -131,21 +114,23 @@ The most preferred payment method is **credit card**.
 
 ```sql
 -- Average number of installments analysis
-SELECT CEILING(AVG(number_of_installments*1.0)) Avg_of_installments
-FROM (
-    SELECT order_id, max(payment_installments) number_of_installments
-    FROM DimPayment
-    JOIN FactOrder
-    ON DimPayment.[Payment_key (PK)] = FactOrder.[Payment_key (FK)]
-    GROUP BY order_id
-) AS NewTab
+WITH MAX_INSTALLMENTS AS (
+SELECT DISTINCT [Warehouse].OrderItems.OrderID , MAX([Warehouse].Payments.PaymentInstallments) MAX_INST
+FROM [Warehouse].Payments
+JOIN [Warehouse].OrderItems
+ON [Warehouse].Payments.PaymentID = [Warehouse].OrderItems.PaymentID
+GROUP BY [Warehouse].OrderItems.OrderID
+)
+
+SELECT AVG(MAX_INST*1.0) Avg_of_installments
+FROM MAX_INSTALLMENTS
 ```
 
 | Avg_of_installments |
 | --- |
-|3|
+|2.932013|
 
-We can SEE that the average number of installments is 3. (2.93 -> 3)
+We can see that the average number of installments is 2.93.
 
 ## 5) Average Spending Time
 
@@ -156,97 +141,87 @@ _(To be implemented)_
 ```sql
 -- Purchase frequency analysis by state
 ------------------------------------------------------------
-SELECT customer_state, COUNT(order_id) Frequency_of_purchase
-FROM FactOrder
-JOIN DimCustomer ON FactOrder.[Customer_key (FK)] = DimCustomer.[Customer_key (PK)]
-GROUP BY customer_state
-ORDER BY Frequency_of_purchase DESC;
+SELECT [Warehouse].Users.UserState , COUNT(DISTINCT [Warehouse].OrderItems.OrderID)*1.0 / (SELECT COUNT(DISTINCT [Warehouse].OrderItems.OrderID) FROM Warehouse.OrderItems) Frequency_of_purchase
+FROM [Warehouse].OrderItems
+JOIN [Warehouse].Users
+ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
+GROUP BY [Warehouse].Users.UserState
+ORDER BY Frequency_of_purchase DESC
 ```
-
-| customer_state | Frequency_of_purchase |
+| UserState | Frequency_of_purchase |
 | --- | --- |
-| Banten | 23133 |
-| Jawa Barat | 13976 |
-| Dki Jakarta | 13613 |
-| Jawa Tengah | 9285 |
-| Jawa Timur | 9185 |
-| Sumatera Utara | 4268 |
-| Sulawesi Selatan | 2591 |
-| Sumatera Selatan | 2298 |
-| Sumatera Barat | 2048 |
-| Papua | 1991 |
-| Di Yogyakarta | 1944 |
-| Kalimantan Timur | 1824 |
-| Lampung | 1818 |
-| Kalimantan Barat | 1736 |
-| Riau | 1669 |
-| Kalimantan Selatan | 1646 |
-| Bali | 1509 |
-| Nusa Tenggara Timur | 1375 |
-| Sulawesi Utara | 1327 |
-| Jambi | 1174 |
-| Kalimantan Tengah | 1165 |
-| Sulawesi Tengah | 1073 |
-| Sulawesi Tenggara | 980 |
-| Aceh | 898 |
-| Kepulauan Riau | 796 |
-| Papua Barat | 777 |
-| Unknown | 775 |
-| Bengkulu | 617 |
-| Maluku Utara | 579 |
-| Kalimantan Utara | 532 |
-| Gorontalo | 526 |
-| Maluku | 524 |
-| Sulawesi Barat | 502 |
-| Nusa Tenggara Barat | 413 |
-| Kepulauan Bangka Belitung | 359 |
-
+| Banten | 0.212859886767 |
+| Jawa Barat | 0.129162015667 |
+| Dki Jakarta | 0.125964139540 |
+| Jawa Tengah | 0.086312486801 |
+| Jawa Timur | 0.084954897879 |
+| Sumatera Utara | 0.039500809525 |
+| Sulawesi Selatan | 0.023963958528 |
+| Sumatera Selatan | 0.021600748182 |
+| Sumatera Barat | 0.019006244909 |
+| Papua | 0.018111241841 |
+| Di Yogyakarta | 0.017678824629 |
+| Kalimantan Timur | 0.016964833418 |
+| Lampung | 0.016864271276 |
+| Kalimantan Barat | 0.015778200138 |
+| Riau | 0.015737975281 |
+| Kalimantan Selatan | 0.015335726712 |
+| Bali | 0.014340161502 |
+| Nusa Tenggara Timur | 0.012630605082 |
+| Sulawesi Utara | 0.012349031083 |
+| Jambi | 0.010961273518 |
+| Kalimantan Tengah | 0.010699811948 |
+| Sulawesi Tengah | 0.009935539666 |
+| Sulawesi Tenggara | 0.008960086885 |
+| Aceh | 0.008266208103 |
+| Kepulauan Riau | 0.007300811536 |
+| Papua Barat | 0.007160024537 |
+| Bengkulu | 0.005782323186 |
+| Maluku Utara | 0.005319737331 |
+| Maluku | 0.004897376333 |
+| Kalimantan Utara | 0.004867207690 |
+| Gorontalo | 0.004816926619 |
+| Sulawesi Barat | 0.004726420691 |
+| Nusa Tenggara Barat | 0.003791192767 |
+| Kepulauan Bangka Belitung | 0.003399000412 |
 
 ## 7) Heavy Traffic Logistic Route
 
 ```sql
 -- Heavy traffic logistic route analysis
-WITH routing AS (
-    SELECT route, Avg([delay (min)]) Avg_delay 
-    FROM FactOrder
-    GROUP BY route
-), number_of_orders AS (
-    SELECT route, COUNT([delay (min)]) number_of_delayed_orders 
-    FROM FactOrder
-    WHERE [delay (min)] != 0
-    GROUP BY route
-)
-SELECT routing.route, Avg_delay, number_of_delayed_orders
-FROM routing
-JOIN number_of_orders ON routing.route = number_of_orders.route
-ORDER BY number_of_delayed_orders DESC;
+SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState,'->',[Warehouse].Users.UserState) Route, COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
+FROM [Warehouse].OrderItems
+JOIN [Warehouse].Users
+ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
+JOIN [Warehouse].Sellers
+ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
+GROUP BY [Warehouse].Sellers.SellerState , [Warehouse].Users.UserState
+ORDER BY Number_of_orders DESC
 ```
-
-| route | Avg_delay | number_of_delayed_orders |
-| --- | --- | --- |
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Barat | 344 | 271|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Selatan | 2292 | 189|
-|Kalimantan Timur-Kabupaten Berau->Dki Jakarta-Kota Jakarta Barat | 2791 | 98|
-|Kalimantan Timur-Kabupaten Berau->Banten-Kota Tangerang | 645 | 84|
-|Banten-Kota Tangerang->Jawa Barat-Kota Depok | 2087 | 68|
-|Sumatera Utara-Kabupaten Deli Serdang->Dki Jakarta-Kota Jakarta Barat | 4627 | 48|
-|Banten-Kota Tangerang->Banten-Kabupaten Tangerang | 653 | 46|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Utara | 1487 | 45|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Timur | 906 | 42|
-|Banten-Kota Tangerang->Jawa Timur-Kabupaten Sidoarjo | 2885 | 42|
-
+| Route | Number_of_orders |
+| --- | --- |
+| Banten->Banten | 6650 |
+| Banten->Jawa Barat | 4009 |
+| Banten->Dki Jakarta | 3448 |
+| Banten->Jawa Timur | 2696 |
+| Banten->Jawa Tengah | 2579 |
+| Jawa Barat->Banten | 2144 |
+| Jawa Tengah->Banten | 2013 |
+| Kalimantan Timur->Banten | 1669 |
+| Jawa Timur->Banten | 1497 |
+| Dki Jakarta->Banten | 1391 |
 
 ## 8) Late Delivered Orders
 
 ```sql
 -- Late delivered orders analysis
-SELECT COUNT(DISTINCT order_id) number_of_delayed_orders
-FROM FactOrder
-WHERE [delay (min)] != 0;
+SELECT COUNT([Warehouse].OrderItems.DeliveryDelayCheck) Number_of_delayed_days
+FROM [Warehouse].OrderItems
+WHERE [Warehouse].OrderItems.DeliveryDelayCheck = 'Delayed'
 ```
-| number_of_delayed_orders |
+| Number_of_delayed_days |
 | --- |
-|7826 |
+|6927 |
 
 ## 9) Correlation Between Late Orders and Customer Satisfaction
 
@@ -256,72 +231,79 @@ DECLARE @N FLOAT, @SumX FLOAT, @SumY FLOAT, @SumXY FLOAT, @SumXSquare FLOAT, @Su
 
 SELECT
     @N = COUNT(*),
-    @SumX = SUM(feeback_score),
-    @SumY = SUM([delay (min)]),
-    @SumXY = SUM(feeback_score * [delay (min)]),
-    @SumXSquare = SUM(feeback_score * feeback_score),
-    @SumYSquare = SUM([delay (min)] * [delay (min)])
-FROM FactOrder
-JOIN DimFeedback ON [Feedback_key (PK)] = [Feedback_key (FK)]
-WHERE [delay (min)] != 0;
+    @SumX = SUM([Warehouse].Feedbacks.FeedbackScore),
+    @SumY = SUM([Warehouse].OrderItems.DeliveryDelayDays),
+    @SumXY = SUM([Warehouse].Feedbacks.FeedbackScore * [Warehouse].OrderItems.DeliveryDelayDays),
+    @SumXSquare = SUM([Warehouse].Feedbacks.FeedbackScore * [Warehouse].Feedbacks.FeedbackScore),
+    @SumYSquare = SUM([Warehouse].OrderItems.DeliveryDelayDays * [Warehouse].OrderItems.DeliveryDelayDays)
+FROM [Warehouse].OrderItems
+JOIN [Warehouse].Feedbacks 
+ON [Warehouse].OrderItems.FeedbackID = [Warehouse].Feedbacks.FeedbackID
+WHERE [Warehouse].OrderItems.DeliveryDelayCheck = 'Delayed'
 
 SELECT
     CAST((@N * @SumXY - @SumX * @SumY) AS FLOAT) /
     SQRT((@N * @SumXSquare - POWER(@SumX, 2)) * (@N * @SumYSquare - POWER(@SumY, 2)))
     AS CorrelationCoefficient;
+
 ```
 
 | CorrelationCoefficient |
 | --- |
-|-0.216616114787772 |
+|-0.127822949637289 |
 
 
 ## 10) Delay Analysis by State
 
 ```sql
 -- Delay analysis for delivery/shipping process in each state
-SELECT route, AVG([shipping_time (min)]) 'Avg_shipping_time (min)', Count(DISTINCT order_id) Number_of_orders
-FROM FactOrder
-GROUP BY route
-ORDER BY Number_of_orders DESC;
+SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState,'->',[Warehouse].Users.UserState) Route, AVG(DISTINCT [Warehouse].OrderItems.ShippingDays) Avg_time_of_shipping_in_days
+FROM [Warehouse].OrderItems
+JOIN [Warehouse].Users
+ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
+JOIN [Warehouse].Sellers
+ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
+GROUP BY [Warehouse].Sellers.SellerState , [Warehouse].Users.UserState
+ORDER BY Avg_time_of_shipping_in_days DESC
 ```
-
-| route | Avg_shipping_time (min) | Number_of_orders |
-| --- | --- | --- |
-|Banten-Kota Tangerang->Banten-Kota Tangerang | 4002 | 4186|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Barat | 16109 | 1433|
-|Kalimantan Timur-Kabupaten Berau->Banten-Kota Tangerang | 10976 | 1116|
-|Unknown | 0 | 776|
-|Banten-Kota Tangerang->Banten-Kabupaten Tangerang | 10453 | 607|
-|Kalimantan Timur-Kabupaten Berau->Dki Jakarta-Kota Jakarta Barat | 19606 | 504|
-|Banten-Kota Tangerang->Jawa Barat-Kabupaten Bekasi | 12810 | 483|
-|Jawa Barat-Kabupaten Bogor->Banten-Kota Tangerang | 3953 | 437|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Selatan | 10790 | 387|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Timur | 6922 | 378|
+| Route | Avg_time_of_shipping_in_days |
+| --- | --- |
+| Aceh->Jambi | 182 |
+| Kalimantan Utara->Bali | 61 |
+| Kepulauan Bangka Belitung->Sulawesi Tenggara | 55 |
+| Nusa Tenggara Barat->Di Yogyakarta | 46 |
+| Kalimantan Tengah->Nusa Tenggara Barat | 40 |
+| Banten->Dki Jakarta | 39 |
+| Banten->Jawa Timur | 32 |
+| Banten->Jawa Barat | 31 |
+| Jawa Tengah->Jawa Timur | 31 |
+| Papua->Riau | 31 |
 
 ## 11) Delay Difference Analysis by State
 
 ```sql
 -- Delay difference analysis between estimated delivery time and actual delivery time in each state
--- (Group by state -> delivered - estimated delivery time)
-SELECT route, AVG([delay (min)]) 'Avg_delay_time (min)', Count(DISTINCT order_id) Number_of_orders
-FROM FactOrder
-GROUP BY route
-ORDER BY Number_of_orders DESC;
+SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState,'->',[Warehouse].Users.UserState) Route, AVG(DISTINCT [Warehouse].OrderItems.DeliveryDelayDays) Avg_time_of_delay_in_days
+FROM [Warehouse].OrderItems
+JOIN [Warehouse].Users
+ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
+JOIN [Warehouse].Sellers
+ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
+GROUP BY [Warehouse].Sellers.SellerState , [Warehouse].Users.UserState
+ORDER BY Avg_time_of_delay_in_days DESC
 ```
-
-| route | Avg_delay_time (min) | Number_of_orders |
-| --- | --- | --- |
-|Banten-Kota Tangerang->Banten-Kota Tangerang | 344 | 4186|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Barat | 2292 | 1433|
-|Kalimantan Timur-Kabupaten Berau->Banten-Kota Tangerang | 645 | 1116|
-|Unknown | 0 | 776|
-|Banten-Kota Tangerang->Banten-Kabupaten Tangerang | 653 | 607|
-|Kalimantan Timur-Kabupaten Berau->Dki Jakarta-Kota Jakarta Barat | 2791 | 504|
-|Banten-Kota Tangerang->Jawa Barat-Kabupaten Bekasi | 425 | 483|
-|Jawa Barat-Kabupaten Bogor->Banten-Kota Tangerang | 233 | 437|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Selatan | 450 | 387|
-|Banten-Kota Tangerang->Dki Jakarta-Kota Jakarta Timur | 906 | 378|
+| Route | Avg_time_of_delay_in_days |
+| --- | --- |
+| Aceh->Jambi | 162 |
+| Nusa Tenggara Barat->Di Yogyakarta | 96 |
+| Bali->Kalimantan Selatan | 94 |
+| Jawa Tengah->Kepulauan Bangka Belitung | 87 |
+| Kalimantan Tengah->Riau | 76 |
+| Sulawesi Barat->Jawa Barat | 68 |
+| Jawa Barat->Nusa Tenggara Barat | 67 |
+| Papua->Riau | 63 |
+| Kalimantan Timur->Sulawesi Barat | 61 |
+| Bali->Kepulauan Bangka Belitung | 59 |
 
 
 This README provides an overview of the data analysis performed to answer specific questions about the ecommerce dataset. The SQL queries and their explanations are provided for each analysis.
