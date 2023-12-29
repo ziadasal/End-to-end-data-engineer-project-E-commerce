@@ -147,7 +147,7 @@ SELECT AVG(MAX_INST*1.0) 'Average Installments'
 FROM MAX_INSTALLMENTS;
 ```
 
-| Avg_of_installments |
+| Average Installments |
 | --- |
 |2.932013|
 
@@ -184,13 +184,13 @@ ORDER BY 'Purchase Frequency' DESC;
 
 ## 7) Which Logistic Route Has Heavy Traffic In Our E-Commerce? (Delay Frequency)
 ```sql
-SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState, ', ', [Warehouse].Sellers.SellerCity,' ==>> ', [Warehouse].Users.UserState, ', ', [Warehouse].Users.UserCity) 'Logistic Route', COUNT(DISTINCT [Warehouse].OrderItems.OrderID) 'Total Orders'
-FROM [Warehouse].OrderItems
-JOIN [Warehouse].Users
-ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
-JOIN [Warehouse].Sellers
-ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
-GROUP BY [Warehouse].Sellers.SellerState, [Warehouse].Sellers.SellerCity, [Warehouse].Users.UserState, [Warehouse].Users.UserCity
+SELECT TOP 10 CONCAT(Sellers.SellerState, ', ', Sellers.SellerCity,' ==>> ', Users.UserState, ', ', Users.UserCity) 'Logistic Route', COUNT(DISTINCT OrderItems.OrderID) 'Total Orders'
+FROM OrderItems
+JOIN Users
+ON Users.UserID = OrderItems.UserID
+JOIN Sellers
+ON Sellers.SellerID = OrderItems.SellerID
+GROUP BY Sellers.SellerState, Sellers.SellerCity, Users.UserState, Users.UserCity
 ORDER BY 'Total Orders' DESC;
 ```
 | Logistic Route | Total Orders |
@@ -245,7 +245,7 @@ SELECT COUNT(DISTINCT(OrderItems.OrderID)) AS 'Total Delayed Orders'
 FROM OrderItems
 WHERE OrderItems.DeliveryDelayCheck = 'Delayed';
 ```
-| Total Delayed |
+| Total Delayed Orders |
 | --- |
 |6535 |
 
