@@ -1,19 +1,18 @@
 # Data Analysis README
 
-## 1) Peak Season Analysis
+## 1) When Is the Peak of Our E-Commerce?
 
 ### Seasons
 
 ```sql
--- Peak season analysis for seasons
-SELECT [Warehouse].Dates.Season , COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
-FROM [Warehouse].Dates 
-JOIN [Warehouse].OrderItems
-ON [Warehouse].Dates.DateKey = [Warehouse].OrderItems.OrderDateKey
-GROUP BY [Warehouse].Dates.Season
-ORDER BY Number_of_orders DESC;
+SELECT Dates.Season, COUNT(DISTINCT OrderItems.OrderID) 'Total Orders'
+FROM Dates 
+JOIN OrderItems
+ON Dates.DateKey = OrderItems.OrderDateKey
+GROUP BY Dates.Season
+ORDER BY 'Total Orders' DESC;
 ```
-| Season | Number_of_orders |
+| Season | Total Orders |
 | --- | --- |
 | Spring | 29719 |
 | Summer | 27089 |
@@ -23,15 +22,15 @@ ORDER BY Number_of_orders DESC;
 ### Months
 
 ```sql
--- Peak season analysis for months
-SELECT [Warehouse].Dates.[Month Name] , COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
-FROM [Warehouse].Dates 
-JOIN [Warehouse].OrderItems
-ON [Warehouse].Dates.DateKey = [Warehouse].OrderItems.OrderDateKey
-GROUP BY [Warehouse].Dates.[Month Name]
-ORDER BY Number_of_orders DESC;
+SELECT Dates.[Month Name], COUNT(DISTINCT OrderItems.OrderID) 'Total Orders'
+FROM Dates
+JOIN OrderItems
+ON Dates.DateKey = OrderItems.OrderDateKey
+GROUP BY Dates.[Month Name]
+ORDER BY 'Total Orders' DESC;
 ```
-| Month Name | Number_of_orders |
+
+| Month Name | Total Orders |
 | --- | --- |
 | August | 10843 |
 | May | 10573 |
@@ -52,17 +51,40 @@ The peak month is **August**.
 
 ## 2) Order Timing Analysis
 
+
+### Time of Day
+
 ```sql
--- Order timing analysis
-SELECT [Warehouse].Times.Hour ,[Warehouse].Times.[AM/PM] , COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
-FROM [Warehouse].Times 
-JOIN [Warehouse].OrderItems
-ON [Warehouse].Times.TimeKey = [Warehouse].OrderItems.OrderTimeKey
-GROUP BY [Warehouse].Times.Hour ,[Warehouse].Times.[AM/PM]
-ORDER BY Number_of_orders DESC;
+SELECT Times.TimeOfDay 'Time Of Day', COUNT(DISTINCT OrderItems.OrderID) 'Total Orders'
+FROM Times 
+JOIN OrderItems
+ON Times.TimeKey = OrderItems.OrderTimeKey
+GROUP BY Times.TimeOfDay
+ORDER BY 'Total Orders' DESC;
+
+```
+| Time Of Day | Total Orders |
+| --- | --- |
+| Afternoon | 26216 |
+| Morning | 25816 |
+| Night | 23513 |
+| Evening | 17901 |
+| Noon | 5995 |
+
+
+### Hour
+
+```sql
+-- What Time Users Are Most Likely Making An Order Or Using The E-Commerce App?
+SELECT Times.Hour, Times.[AM/PM], COUNT(DISTINCT OrderItems.OrderID) 'Total Orders'
+FROM Times 
+JOIN OrderItems
+ON Times.TimeKey = OrderItems.OrderTimeKey
+GROUP BY Times.Hour, Times.[AM/PM]
+ORDER BY 'Total Orders' DESC;
 ```
 
-| Hour | AM/PM | Number_of_orders |
+| Hour | AM/PM | Total Orders |
 | --- | --- | --- |
 | 16 | P.M. | 6675 |
 | 11 | A.M. | 6578 |
@@ -94,13 +116,13 @@ We can SEE that the peak hours are 16 PM, 11 AM, 14 PM, 13 PM, 15 PM.
 ## 3) Preferred Payment Method
 
 ```sql
--- Preferred payment method analysis
-SELECT [Warehouse].Payments.PaymentType , COUNT([Warehouse].Payments.PaymentType) Number_of_orders
-FROM [Warehouse].Payments
-GROUP BY [Warehouse].Payments.PaymentType
-ORDER BY Number_of_orders DESC
+-- What Is The Preferred Way To Pay In The E-Commerce?
+SELECT Payments.PaymentType 'Payment Type', COUNT(Payments.PaymentType) 'Total Orders'
+FROM Payments
+GROUP BY Payments.PaymentType
+ORDER BY 'Total Orders' DESC;
 ```
-| PaymentType | Number_of_orders |
+| PaymentType | Total Orders |
 | --- | --- |
 | Credit Card | 76795 |
 | Blipay | 19784 |
@@ -113,17 +135,16 @@ The most preferred payment method is **credit card**.
 ## 4) Average Installments
 
 ```sql
--- Average number of installments analysis
+-- How Many Installments Are Usually Done When Paying In The Ecommerce?
 WITH MAX_INSTALLMENTS AS (
-SELECT DISTINCT [Warehouse].OrderItems.OrderID , MAX([Warehouse].Payments.PaymentInstallments) MAX_INST
-FROM [Warehouse].Payments
-JOIN [Warehouse].OrderItems
-ON [Warehouse].Payments.PaymentID = [Warehouse].OrderItems.PaymentID
-GROUP BY [Warehouse].OrderItems.OrderID
+SELECT DISTINCT OrderItems.OrderID , MAX(Payments.PaymentInstallments) MAX_INST
+FROM Payments
+JOIN OrderItems
+ON Payments.PaymentID = OrderItems.PaymentID
+GROUP BY OrderItems.OrderID
 )
-
-SELECT AVG(MAX_INST*1.0) Avg_of_installments
-FROM MAX_INSTALLMENTS
+SELECT AVG(MAX_INST*1.0) 'Average Installments'
+FROM MAX_INSTALLMENTS;
 ```
 
 | Avg_of_installments |
@@ -136,174 +157,236 @@ We can see that the average number of installments is 2.93.
 
 _(To be implemented)_
 
-## 6) Purchase Frequency by State
+## 6) What Is The Frequency Of Purchase In Each State?
 
 ```sql
--- Purchase frequency analysis by state
-------------------------------------------------------------
-SELECT [Warehouse].Users.UserState , COUNT(DISTINCT [Warehouse].OrderItems.OrderID)*1.0 / (SELECT COUNT(DISTINCT [Warehouse].OrderItems.OrderID) FROM Warehouse.OrderItems) Frequency_of_purchase
-FROM [Warehouse].OrderItems
-JOIN [Warehouse].Users
-ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
-GROUP BY [Warehouse].Users.UserState
-ORDER BY Frequency_of_purchase DESC
+-- What Is The Frequency Of Purchase In Each State?
+SELECT Users.UserState 'User State',
+    COUNT(DISTINCT OrderItems.OrderID) * 1.0 / COUNT(DISTINCT OrderItems.UserID) AS 'Purchase Frequency'
+FROM OrderItems
+LEFT JOIN Users on OrderItems.UserID = Users.UserID
+GROUP BY Users.UserState
+ORDER BY 'Purchase Frequency' DESC;
 ```
-| UserState | Frequency_of_purchase |
+
+| UserState | Purchase Frequency |
 | --- | --- |
-| Banten | 0.212859886767 |
-| Jawa Barat | 0.129162015667 |
-| Dki Jakarta | 0.125964139540 |
-| Jawa Tengah | 0.086312486801 |
-| Jawa Timur | 0.084954897879 |
-| Sumatera Utara | 0.039500809525 |
-| Sulawesi Selatan | 0.023963958528 |
-| Sumatera Selatan | 0.021600748182 |
-| Sumatera Barat | 0.019006244909 |
-| Papua | 0.018111241841 |
-| Di Yogyakarta | 0.017678824629 |
-| Kalimantan Timur | 0.016964833418 |
-| Lampung | 0.016864271276 |
-| Kalimantan Barat | 0.015778200138 |
-| Riau | 0.015737975281 |
-| Kalimantan Selatan | 0.015335726712 |
-| Bali | 0.014340161502 |
-| Nusa Tenggara Timur | 0.012630605082 |
-| Sulawesi Utara | 0.012349031083 |
-| Jambi | 0.010961273518 |
-| Kalimantan Tengah | 0.010699811948 |
-| Sulawesi Tengah | 0.009935539666 |
-| Sulawesi Tenggara | 0.008960086885 |
-| Aceh | 0.008266208103 |
-| Kepulauan Riau | 0.007300811536 |
-| Papua Barat | 0.007160024537 |
-| Bengkulu | 0.005782323186 |
-| Maluku Utara | 0.005319737331 |
-| Maluku | 0.004897376333 |
-| Kalimantan Utara | 0.004867207690 |
-| Gorontalo | 0.004816926619 |
-| Sulawesi Barat | 0.004726420691 |
-| Nusa Tenggara Barat | 0.003791192767 |
-| Kepulauan Bangka Belitung | 0.003399000412 |
+| Maluku | 1.047311827956 |
+| Jambi | 1.042065009560 |
+| Nusa Tenggara Barat | 1.041436464088 |
+| Kalimantan Timur | 1.040073982737 |
+| Dki Jakarta | 1.038984737889 |
+| Sumatera Barat | 1.037891268533 |
+| Banten | 1.037089661930 |
+| Sulawesi Selatan | 1.036988685813 |
+| Nusa Tenggara Timur | 1.035449299258 |
 
-## 7) Heavy Traffic Logistic Route
 
+## 7) Which Logistic Route Has Heavy Traffic In Our E-Commerce? (Delay Frequency)
 ```sql
--- Heavy traffic logistic route analysis
-SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState,'->',[Warehouse].Users.UserState) Route, COUNT(DISTINCT [Warehouse].OrderItems.OrderID) Number_of_orders
+SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState, ', ', [Warehouse].Sellers.SellerCity,' ==>> ', [Warehouse].Users.UserState, ', ', [Warehouse].Users.UserCity) 'Logistic Route', COUNT(DISTINCT [Warehouse].OrderItems.OrderID) 'Total Orders'
 FROM [Warehouse].OrderItems
 JOIN [Warehouse].Users
 ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
 JOIN [Warehouse].Sellers
 ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
-GROUP BY [Warehouse].Sellers.SellerState , [Warehouse].Users.UserState
-ORDER BY Number_of_orders DESC
+GROUP BY [Warehouse].Sellers.SellerState, [Warehouse].Sellers.SellerCity, [Warehouse].Users.UserState, [Warehouse].Users.UserCity
+ORDER BY 'Total Orders' DESC;
 ```
-| Route | Number_of_orders |
+| Logistic Route | Total Orders |
 | --- | --- |
-| Banten->Banten | 6650 |
-| Banten->Jawa Barat | 4009 |
-| Banten->Dki Jakarta | 3448 |
-| Banten->Jawa Timur | 2696 |
-| Banten->Jawa Tengah | 2579 |
-| Jawa Barat->Banten | 2144 |
-| Jawa Tengah->Banten | 2013 |
-| Kalimantan Timur->Banten | 1669 |
-| Jawa Timur->Banten | 1497 |
-| Dki Jakarta->Banten | 1391 |
+| Banten, Kota Tangerang ==>> Dki Jakarta, Kota Jakarta Barat | 4182 |
+| Banten, Kota Tangerang ==>> Banten, Kota Tangerang | 1432 |   
+| Kalimantan Timur, Kabupaten Berau ==>> Banten, Kota Tangerang | 1113 |
+| Banten, Kota Tangerang ==>> Banten, Kabupaten Tangerang | 605 |
+| Kalimantan Timur, Kabupaten Berau ==>> Dki Jakarta, Kota Jakarta Barat | 504 |
+| Banten, Kota Tangerang ==>> Jawa Barat, Kabupaten Bekasi | 485 |
+| Jawa Barat, Kabupaten Bogor ==>> Banten, Kota Tangerang | 437 |
+| Banten, Kota Tangerang ==>> Dki Jakarta, Kota Jakarta Selatan | 387 |
+| Banten, Kota Tangerang ==>> Dki Jakarta, Kota Jakarta Timur | 378 |
+| Dki Jakarta, Kota Jakarta Selatan ==>> Banten, Kota Tangerang | 371 |
 
-## 8) Late Delivered Orders
-
+## 8) Which Logistic Route Has Heavy Traffic In Our E-Commerce? (Delay Frequency)
 ```sql
--- Late delivered orders analysis
-SELECT COUNT([Warehouse].OrderItems.DeliveryDelayCheck) Number_of_delayed_days
-FROM [Warehouse].OrderItems
-WHERE [Warehouse].OrderItems.DeliveryDelayCheck = 'Delayed'
+SELECT TOP 10 CONCAT(Sellers.SellerState, ', ', Sellers.SellerCity,' ==>> ', Users.UserState, ', ', Users.UserCity) 'Logistic Route', AVG(SubQuery.MaxDeliveryDelayDays) / 
+           COUNT(DISTINCT(OrderItems.OrderID)) AS 'Average Delivery Days Per Order'
+FROM (
+    SELECT OrderItems.OrderID, MAX(OrderItems.DeliveryDelayDays*1.0) AS MaxDeliveryDelayDays
+    FROM OrderItems
+	WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
+    GROUP BY OrderItems.OrderID
+) AS SubQuery
+JOIN OrderItems ON SubQuery.OrderID = OrderItems.OrderID
+JOIN Users
+ON Users.UserID = OrderItems.UserID
+JOIN Sellers
+ON Sellers.SellerID = OrderItems.SellerID
+WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
+GROUP BY Sellers.SellerState, Sellers.SellerCity, Users.UserState, Users.UserCity
+ORDER BY 'Average Delivery Days Per Order' DESC;
 ```
-| Number_of_delayed_days |
-| --- |
-|6927 |
 
-## 9) Correlation Between Late Orders and Customer Satisfaction
+| Logistic Route | Average Delivery Days Per Order |
+| --- | --- |
+| Banten, Kabupaten Tangerang ==>> Kepulauan Riau, Kabupaten Bintan | 181.000000 |
+| Banten, Kota Tangerang ==>> Lampung, Kabupaten Lampung Selatan | 175.000000 |
+| Sumatera Utara, Kabupaten Nias Selatan ==>> Jawa Barat, Kabupaten Tasikmalaya | 167.000000 |
+| Jawa Tengah, Kabupaten Kendal ==>> Kepulauan Bangka Belitung, Kabupaten Bangka Tengah | 166.000000 |
+| Aceh, Kabupaten Simeulue ==>> Jambi, Kabupaten Bungo | 162.000000 |
+| Jawa Timur, Kota Malang ==>> Jawa Tengah, Kabupaten Jepara | 161.000000 |
+| Kalimantan Timur, Kota Balikpapan ==>> Jawa Barat, Kota Bekasi | 161.000000 |
+| Jawa Timur, Kota Mojokerto ==>> Jawa Barat, Kota Tasikmalaya | 159.000000 |
+| Jawa Barat, Kota Bandung ==>> Sulawesi Utara, Kota Manado | 155.000000 |
+| Jawa Timur, Kabupaten Jombang ==>> Sumatera Barat, Kota Bukittinggi | 153.000000 |
+
+## 9) How Many Late Delivered Orders In Our E-Commerce?
+```sql
+SELECT COUNT(DISTINCT(OrderItems.OrderID)) AS 'Total Delayed Orders'
+FROM OrderItems
+WHERE OrderItems.DeliveryDelayCheck = 'Delayed';
+```
+| Total Delayed |
+| --- |
+|6535 |
+
+## 10) Are Late Orders Affecting Customer Satisfaction
 
 ```sql
--- Correlation analysis between late orders and customer satisfaction
 DECLARE @N FLOAT, @SumX FLOAT, @SumY FLOAT, @SumXY FLOAT, @SumXSquare FLOAT, @SumYSquare FLOAT;
-
 SELECT
     @N = COUNT(*),
-    @SumX = SUM([Warehouse].Feedbacks.FeedbackScore),
-    @SumY = SUM([Warehouse].OrderItems.DeliveryDelayDays),
-    @SumXY = SUM([Warehouse].Feedbacks.FeedbackScore * [Warehouse].OrderItems.DeliveryDelayDays),
-    @SumXSquare = SUM([Warehouse].Feedbacks.FeedbackScore * [Warehouse].Feedbacks.FeedbackScore),
-    @SumYSquare = SUM([Warehouse].OrderItems.DeliveryDelayDays * [Warehouse].OrderItems.DeliveryDelayDays)
-FROM [Warehouse].OrderItems
-JOIN [Warehouse].Feedbacks 
-ON [Warehouse].OrderItems.FeedbackID = [Warehouse].Feedbacks.FeedbackID
-WHERE [Warehouse].OrderItems.DeliveryDelayCheck = 'Delayed'
-
+    @SumX = SUM(Feedbacks.FeedbackScore),
+    @SumY = SUM(OrderItems.DeliveryDelayDays),
+    @SumXY = SUM(Feedbacks.FeedbackScore * OrderItems.DeliveryDelayDays),
+    @SumXSquare = SUM(Feedbacks.FeedbackScore * Feedbacks.FeedbackScore),
+    @SumYSquare = SUM(OrderItems.DeliveryDelayDays * OrderItems.DeliveryDelayDays)
+FROM OrderItems
+JOIN Feedbacks 
+ON OrderItems.FeedbackID = Feedbacks.FeedbackID
+WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
 SELECT
     CAST((@N * @SumXY - @SumX * @SumY) AS FLOAT) /
     SQRT((@N * @SumXSquare - POWER(@SumX, 2)) * (@N * @SumYSquare - POWER(@SumY, 2)))
-    AS CorrelationCoefficient;
+    AS 'Feedback Score & Delivery Delay Correlation Coefficient';
 
 ```
 
-| CorrelationCoefficient |
+| Feedback Score & Delivery Delay Correlation Coefficient |
 | --- |
 |-0.127822949637289 |
 
 
-## 10) Delay Analysis by State
+## 11) How Long Is The Delay For Delivery/Shipping Process In Each State?
+```sql
+SELECT Top 10 Users.UserState 'User State', AVG(SubQuery.MaxShippingDays*1.0) AS 'Average Shipping Days'
+FROM (
+    SELECT OrderItems.UserID, OrderItems.OrderID, MAX(OrderItems.ShippingDays) AS MaxShippingDays
+    FROM OrderItems
+    GROUP BY OrderItems.UserID, OrderItems.OrderID
+) AS SubQuery
+JOIN Users ON Users.UserID = SubQuery.UserID
+GROUP BY Users.UserState
+ORDER BY 'Average Shipping Days' DESC;
+```
+| User State | Average Shipping Days |
+| --- | --- |
+| Kepulauan Bangka Belitung | 12.969696 |
+| Bali | 12.297376 |
+| Sulawesi Barat | 11.962800 |
+| Kepulauan Riau | 11.834512 |
+| Sulawesi Tenggara | 11.831242 |
+| Nusa Tenggara Timur | 11.810074 |
+| Sulawesi Utara | 11.690833 |
+| Papua | 11.600341 |
+| Lampung | 11.563467 |
+| Aceh | 11.483188 |
+
+## 12) How Long Is The Delay For Delivery/Shipping Process For Each Logistic Route?
+```sql
+SELECT CONCAT(Sellers.SellerState, ', ', Sellers.SellerCity,' ==>> ', Users.UserState, ', ', Users.UserCity) 'Logistic Route', AVG(SubQuery.MaxShippingDays*1.0) AS 'Average Shipping Days'
+FROM (
+    SELECT OrderItems.UserID, OrderItems.OrderID, MAX(OrderItems.ShippingDays) AS MaxShippingDays
+    FROM OrderItems
+    GROUP BY OrderItems.UserID, OrderItems.OrderID
+) AS SubQuery
+JOIN OrderItems ON SubQuery.OrderID = OrderItems.OrderID
+JOIN Users
+ON Users.UserID = OrderItems.UserID
+JOIN Sellers
+ON Sellers.SellerID = OrderItems.SellerID
+WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
+GROUP BY Sellers.SellerState, Sellers.SellerCity, Users.UserState, Users.UserCity
+ORDER BY 'Average Shipping Days' DESC;
+```
+| Logistic Route | Average Shipping Days |
+| --- | --- |
+| Banten, Kabupaten Tangerang ==>> Kepulauan Riau, Kabupaten Bintan | 195 |
+| Jawa Tengah, Kabupaten Kendal ==>> Kepulauan Bangka Belitung, Kabupaten Bangka Tengah | 194 |
+| Jawa Timur, Kota Mojokerto ==>> Jawa Barat, Kota Tasikmalaya | 187 |
+| Sumatera Utara, Kabupaten Nias Selatan ==>> Jawa Barat, Kabupaten Tasikmalaya | 186 |
+| Aceh, Kabupaten Simeulue ==>> Jambi, Kabupaten Bungo | 182 |
+| Jawa Timur, Kabupaten Jombang ==>> Sumatera Barat, Kota Bukittinggi | 182 |
+| Kalimantan Timur, Kabupaten Berau ==>> Sulawesi Barat, Kabupaten Majene | 182 |
+| Jawa Barat, Kota Bandung ==>> Sulawesi Utara, Kota Manado | 181 |
+| Jawa Timur, Kota Malang ==>> Jawa Tengah, Kabupaten Jepara | 181 |
+| Jawa Barat, Kota Bandung ==>> Jawa Barat, Kota Cirebon | 179 |
+
+## 13) How Long Is The Difference Between Estimated Delivery Time And Actual Delivery Time In Each State?
 
 ```sql
--- Delay analysis for delivery/shipping process in each state
-SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState,'->',[Warehouse].Users.UserState) Route, AVG(DISTINCT [Warehouse].OrderItems.ShippingDays) Avg_time_of_shipping_in_days
-FROM [Warehouse].OrderItems
-JOIN [Warehouse].Users
-ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
-JOIN [Warehouse].Sellers
-ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
-GROUP BY [Warehouse].Sellers.SellerState , [Warehouse].Users.UserState
-ORDER BY Avg_time_of_shipping_in_days DESC
+SELECT Users.UserState 'User State', AVG(SubQuery.MaxDeliveryDelayDays*1.0) AS 'Average Delivery Delay Days'
+FROM (
+    SELECT OrderItems.UserID, OrderItems.OrderID, MAX(OrderItems.DeliveryDelayDays*1.0) AS MaxDeliveryDelayDays
+    FROM OrderItems
+    GROUP BY OrderItems.UserID, OrderItems.OrderID
+) AS SubQuery
+JOIN Users ON Users.UserID = SubQuery.UserID
+GROUP BY Users.UserState
+ORDER BY 'Average Delivery Delay Days' DESC;
 ```
-| Route | Avg_time_of_shipping_in_days |
+
+| User State | Average Delivery Delay Days |
 | --- | --- |
-| Aceh->Jambi | 182 |
-| Kalimantan Utara->Bali | 61 |
-| Kepulauan Bangka Belitung->Sulawesi Tenggara | 55 |
-| Nusa Tenggara Barat->Di Yogyakarta | 46 |
-| Kalimantan Tengah->Nusa Tenggara Barat | 40 |
-| Banten->Dki Jakarta | 39 |
-| Banten->Jawa Timur | 32 |
-| Banten->Jawa Barat | 31 |
-| Jawa Tengah->Jawa Timur | 31 |
-| Papua->Riau | 31 |
+| Nusa Tenggara Barat | 16.954545 |
+| Kepulauan Bangka Belitung | 16.433333 |
+| Bengkulu | 15.476190 |
+| Maluku Utara | 14.941176 |
+| Sulawesi Barat | 14.714285 |
+| Jambi | 14.558441 |
+| Kepulauan Riau | 14.156862 |
+| Bali | 13.343065 |
+| Sulawesi Utara | 12.444444 |
+| Dki Jakarta | 12.319792 |
 
-## 11) Delay Difference Analysis by State
-
+## 14) How Long Is The Difference Between Estimated Delivery Time And Actual Delivery Time For Each Logistic Route?
 ```sql
--- Delay difference analysis between estimated delivery time and actual delivery time in each state
-SELECT TOP 10 CONCAT([Warehouse].Sellers.SellerState,'->',[Warehouse].Users.UserState) Route, AVG(DISTINCT [Warehouse].OrderItems.DeliveryDelayDays) Avg_time_of_delay_in_days
-FROM [Warehouse].OrderItems
-JOIN [Warehouse].Users
-ON [Warehouse].Users.UserID = [Warehouse].OrderItems.UserID
-JOIN [Warehouse].Sellers
-ON [Warehouse].Sellers.SellerID = [Warehouse].OrderItems.SellerID
-GROUP BY [Warehouse].Sellers.SellerState , [Warehouse].Users.UserState
-ORDER BY Avg_time_of_delay_in_days DESC
+SELECT CONCAT(Sellers.SellerState, ', ', Sellers.SellerCity,' ==>> ', Users.UserState, ', ', Users.UserCity) 'Logistic Route', AVG(SubQuery.MaxDeliveryDelayDays*1.0) AS 'Average Delivery Delay Days'
+FROM (
+    SELECT OrderItems.UserID, OrderItems.OrderID, MAX(OrderItems.DeliveryDelayDays*1.0) AS MaxDeliveryDelayDays
+    FROM OrderItems
+    GROUP BY OrderItems.UserID, OrderItems.OrderID
+) AS SubQuery
+JOIN OrderItems ON SubQuery.OrderID = OrderItems.OrderID
+JOIN Users
+ON Users.UserID = OrderItems.UserID
+JOIN Sellers
+ON Sellers.SellerID = OrderItems.SellerID
+WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
+GROUP BY Sellers.SellerState, Sellers.SellerCity, Users.UserState, Users.UserCity
+ORDER BY 'Average Delivery Delay Days' DESC;
 ```
-| Route | Avg_time_of_delay_in_days |
-| --- | --- |
-| Aceh->Jambi | 162 |
-| Nusa Tenggara Barat->Di Yogyakarta | 96 |
-| Bali->Kalimantan Selatan | 94 |
-| Jawa Tengah->Kepulauan Bangka Belitung | 87 |
-| Kalimantan Tengah->Riau | 76 |
-| Sulawesi Barat->Jawa Barat | 68 |
-| Jawa Barat->Nusa Tenggara Barat | 67 |
-| Papua->Riau | 63 |
-| Kalimantan Timur->Sulawesi Barat | 61 |
-| Bali->Kepulauan Bangka Belitung | 59 |
 
+| Logistic Route | Average Delivery Delay Days |
+| --- | --- |
+| Banten, Kabupaten Tangerang ==>> Kepulauan Riau, Kabupaten Bintan | 181 |
+| Banten, Kota Tangerang ==>> Lampung, Kabupaten Lampung Selatan | 175 |
+| Sumatera Utara, Kabupaten Nias Selatan ==>> Jawa Barat, Kabupaten Tasikmalaya | 167 |
+| Jawa Tengah, Kabupaten Kendal ==>> Kepulauan Bangka Belitung, Kabupaten Bangka Tengah | 166 |
+| Aceh, Kabupaten Simeulue ==>> Jambi, Kabupaten Bungo | 162 |
+| Jawa Timur, Kota Malang ==>> Jawa Tengah, Kabupaten Jepara | 161 |
+| Kalimantan Timur, Kota Balikpapan ==>> Jawa Barat, Kota Bekasi | 161 |
+| Jawa Timur, Kota Mojokerto ==>> Jawa Barat, Kota Tasikmalaya | 159 |
+| Jawa Barat, Kota Bandung ==>> Sulawesi Utara, Kota Manado | 155 |
+| Jawa Timur, Kabupaten Jombang ==>> Sumatera Barat, Kota Bukittinggi | 153 |
 
 This README provides an overview of the data analysis performed to answer specific questions about the ecommerce dataset. The SQL queries and their explanations are provided for each analysis.
