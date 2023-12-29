@@ -5,6 +5,7 @@ In the culmination of this data engineering project, we present insightful visua
 
 # Page one
 ![Main KPIs](Main_KPIs.png)
+
 ### Key Metrics
 
 - **Total Orders:**
@@ -14,7 +15,7 @@ In the culmination of this data engineering project, we present insightful visua
   - Total payment value: 16.0 bn
 
 - **Average Installments:**
-  - AVERAGEX function calculates the average number of installments, yielding 2.85 on average.
+  - AVERAGEX function calculates the average number of installments, yielding 2.93 on average.
 
 - **Total Payments:**
   - Calculated by counting the distinct payment IDs, providing a holistic view of payment transactions.
@@ -39,7 +40,7 @@ In the culmination of this data engineering project, we present insightful visua
 ### Correlation Analysis
 
 - **Correlation between Feedback Score and Delivery Delay:**
-  - Correlation coefficient: -0.078
+  - Correlation coefficient: -0.071
   - Indicates a weak negative correlation between feedback score and delivery delay.
 
 ### Seasonal Trends
@@ -49,7 +50,6 @@ In the culmination of this data engineering project, we present insightful visua
 
 # Page two
 ![Location KPIs](Location_KPIs.png)
-
 ### Key Metrics
 
     - **Worst Traffic by city:**
