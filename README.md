@@ -30,6 +30,10 @@ Experience the synergy of SQL Server and Power BI as We leverage queries to unco
 
 - **Actionable Intelligence:** The analysis phase, powered by SQL Server and visualized through Power BI, provides strategic insights to drive informed business decisions.
 
+## Project Presentation
+
+https://www.canva.com/design/DAF4b_QR4-0/cxoS4bgAY-N73LIUHhu6zw/edit?utm_content=DAF4b_QR4-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ### Conclusion:
 
 This project showcases the integration of Alteryx for efficient ETL processes, Power Query for meticulous transformations, and SQL Server along with Power BI for insightful analysis. Join me in exploring the intricacies of data engineering, from CSV extraction to strategic insights in the context of an ever-evolving e-commerce industry.
