@@ -30,9 +30,64 @@ Experience the synergy of SQL Server and Power BI as We leverage queries to unco
 
 - **Actionable Intelligence:** The analysis phase, powered by SQL Server and visualized through Power BI, provides strategic insights to drive informed business decisions.
 
+## [1. Source Data](./1.%20Source%20Data/README.md)
+
+Data Source:
+![Data Source](1.%20Source%20Data/source_data.png)
+
+## [2. Staging layer](./2.%20Staging%20Layer/README.md)
+
+Staging Model:
+![Stating Model](2.%20Staging%20Layer/Statging_model.png)
+
+Alteryx Workflow:
+![Staging Workflow](2.%20Staging%20Layer/full_statging_workflow.png)
+
+## [3. Data Warehouse](./3.%20Data%20Warehouse/README.md)
+
+Data Warehouse Model:
+![Data Warehouse](3.%20DataWarehouse%20Design/model.png)
+
+
+## [4. Analysis using SQL](./4.%20Analysis%20The%20Data/README.md)
+
+Example of the analysis:
+Question: 
+
+Which Logistic Route Has Heavy Traffic In Our E-Commerce? (Delay Frequency)
+
+```sql
+SELECT TOP 10 CONCAT(Sellers.SellerState, ', ', Sellers.SellerCity,' ==>> ', Users.UserState, ', ', Users.UserCity) 'Logistic Route', AVG(SubQuery.MaxDeliveryDelayDays) / 
+           COUNT(DISTINCT(OrderItems.OrderID)) AS 'Average Delivery Days Per Order'
+FROM (
+    SELECT OrderItems.OrderID, MAX(OrderItems.DeliveryDelayDays*1.0) AS MaxDeliveryDelayDays
+    FROM OrderItems
+	WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
+    GROUP BY OrderItems.OrderID
+) AS SubQuery
+JOIN OrderItems ON SubQuery.OrderID = OrderItems.OrderID
+JOIN Users
+ON Users.UserID = OrderItems.UserID
+JOIN Sellers
+ON Sellers.SellerID = OrderItems.SellerID
+WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
+GROUP BY Sellers.SellerState, Sellers.SellerCity, Users.UserState, Users.UserCity
+ORDER BY 'Average Delivery Days Per Order' DESC;
+```
+
+## [5. Final Insights](./5.%20Final%20Insights/README.md)
+
+Main KPIs:
+![Main KPIs](5.%20Final%20Insights/Main_KPIs.png)
+
+Location KPIs:
+![Location KPIs](5.%20Final%20Insights/Location_KPIs.png)
+
 ## Project Presentation
 
 https://www.canva.com/design/DAF4b_QR4-0/cxoS4bgAY-N73LIUHhu6zw/edit?utm_content=DAF4b_QR4-0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+
 
 ### Conclusion:
 
