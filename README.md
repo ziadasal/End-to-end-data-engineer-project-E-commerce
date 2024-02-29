@@ -35,18 +35,18 @@ Experience the synergy of SQL Server and Power BI as We leverage queries to unco
 Data Source:
 ![Data Source](1.%20Source%20Data/source_data.png)
 
-## [2. Staging layer](./2.%20Staging%20Layer/README.md)
+## [2. Staging layer](./2.%20Staging%20layer/README.md)
 
 Staging Model:
-![Stating Model](2.%20Staging%20Layer/Statging_model.png)
+![Stating Model](2.%20Staging%20layer/Statging_model.png)
 
 Alteryx Workflow:
-![Staging Workflow](2.%20Staging%20Layer/full_statging_workflow.png)
+![Staging Workflow](2.%20Staging%20layer/full_statging_workflow.png)
 
-## [3. Data Warehouse](./3.%20Data%20Warehouse/README.md)
+## [3. Data Warehouse](./3.%20DataWarehouse%20Design/README.md)
 
 Data Warehouse Model:
-![Data Warehouse](3.%20DataWarehouse%20Design/model.png)
+![Data Warehouse](3.%20DataWarehouse%20Design/Model.png)
 
 
 ## [4. Analysis using SQL](./4.%20Analysis%20The%20Data/README.md)
