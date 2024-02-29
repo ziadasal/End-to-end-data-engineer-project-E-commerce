@@ -33,19 +33,23 @@ Experience the synergy of SQL Server and Power BI as We leverage queries to unco
 ## [1. Source Data](./1.%20Source%20Data/README.md)
 
 Data Source:
+
 ![Data Source](1.%20Source%20Data/source_data.png)
 
 ## [2. Staging layer](./2.%20Staging%20layer/README.md)
 
 Staging Model:
+
 ![Stating Model](2.%20Staging%20layer/Statging_model.png)
 
 Alteryx Workflow:
+
 ![Staging Workflow](2.%20Staging%20layer/full_statging_workflow.png)
 
 ## [3. Data Warehouse](./3.%20DataWarehouse%20Design/README.md)
 
 Data Warehouse Model:
+
 ![Data Warehouse](3.%20DataWarehouse%20Design/Model.png)
 
 
@@ -78,9 +82,11 @@ ORDER BY 'Average Delivery Days Per Order' DESC;
 ## [5. Final Insights](./5.%20Final%20Insights/README.md)
 
 Main KPIs:
+
 ![Main KPIs](5.%20Final%20Insights/Main_KPIs.png)
 
 Location KPIs:
+
 ![Location KPIs](5.%20Final%20Insights/Location_KPIs.png)
 
 ## Project Presentation
